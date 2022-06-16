@@ -1,8 +1,9 @@
 import { RocketIcon } from './components/icons/RocketIcon'
+import { ClipboardIcon } from './components/icons/Clipboard'
 import { NewTask } from './components/NewTask/NewTask'
+import { Task } from './components/Task/Task'
 
 import * as S from './App.styles'
-import { ClipboardIcon } from './components/icons/Clipboard'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           </S.TasksInfo>
 
           <S.TasksList>
+            <Task task="Teste" />
             <S.EmptyTasks>
               <ClipboardIcon />
               <strong>Você ainda não tem tarefas cadastradas</strong>

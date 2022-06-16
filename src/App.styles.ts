@@ -65,7 +65,6 @@ export const Badge = styled.span`
 
 export const TasksList = styled.div`
   margin-top: 1.5rem;
-  border-top: 1px solid var(--gray-400);
 
   display: flex;
   flex-direction: column;
