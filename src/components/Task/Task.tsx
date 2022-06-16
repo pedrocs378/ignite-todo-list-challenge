@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { FaRegTrashAlt } from 'react-icons/fa'
 import { BsCheck2 } from 'react-icons/bs'
 
@@ -10,7 +11,7 @@ type TaskProps = {
   onDeleteClick?: () => void
 }
 
-export function Task({ checked = false, task, onChange, onDeleteClick }: TaskProps) {
+function TaskComponent({ checked = false, task, onChange, onDeleteClick }: TaskProps) {
   return (
     <S.Container checked={checked}>
       <S.Radio>
@@ -28,3 +29,7 @@ export function Task({ checked = false, task, onChange, onDeleteClick }: TaskPro
     </S.Container>
   )
 }
+
+export const Task = memo(TaskComponent, (prevProps, nextProps) => {
+  return prevProps.checked === nextProps.checked && prevProps.task === nextProps.task
+})
