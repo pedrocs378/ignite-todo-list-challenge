@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+type ContainerProps = {
+  checked?: boolean
+}
+
+export const Container = styled.div<ContainerProps>`
   padding: 1rem;
   background-color: var(--gray-500);
   border: 1px solid var(--gray-400);
@@ -12,8 +16,9 @@ export const Container = styled.div`
 
   > span {
     flex: 1;
-    color: var(--gray-100);
+    color: ${({ checked }) => checked ? 'var(--gray-300)' : 'var(--gray-100)'};
     font-size: var(--fs-sm);
+    text-decoration: ${({ checked }) => checked && 'line-through'};
   }
 `
 

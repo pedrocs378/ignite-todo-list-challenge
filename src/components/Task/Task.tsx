@@ -12,7 +12,7 @@ type TaskProps = {
 
 export function Task({ checked = false, task, onChange, onDeleteClick }: TaskProps) {
   return (
-    <S.Container>
+    <S.Container checked={checked}>
       <S.Radio>
         <input type="radio" checked={checked} onChange={onChange} />
         <div>
